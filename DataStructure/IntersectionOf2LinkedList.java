@@ -1,6 +1,6 @@
 package Progress.DataStructure;
 
-public class CycleLinkedList2 {
+public class IntersectionOf2LinkedList {
     public static class ListNode {
         int val;
         ListNode next;
@@ -19,31 +19,7 @@ public class CycleLinkedList2 {
         }
         System.out.println();
     }
-    public static ListNode intersection(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
-        while(fast != null && fast.next != null){ 
-            slow = slow.next;
-            fast = fast.next.next;  
-            if(slow == fast){
-                return slow;
-            }
-        }
-        return null;
-    }
-    public static ListNode detectCycle(ListNode head){
-        if(head == null || head.next == null){
-            return null;
-        }
-        ListNode intersect = intersection(head);
-        if(intersect == null) return null;
-        ListNode start = head;
-        while(intersect != start){
-            start = start.next; 
-            intersect = intersect.next;
-        }
-        return start;
-    }
+    
     public static void main(String[] args) {
         ListNode a1 = new ListNode(1);
         ListNode a2 = new ListNode(2);
@@ -56,7 +32,7 @@ public class CycleLinkedList2 {
         a3.next = a4;
         a4.next = a5;
         a5.next = a6;
-        ListNode newList = detectCycle(a1);
+        ListNode newList = a1;
         System.out.println(newList);
     }
 }

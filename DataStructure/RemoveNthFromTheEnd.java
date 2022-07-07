@@ -1,6 +1,6 @@
 package Progress.DataStructure;
 
-public class CycleLinkedList2 {
+public class RemoveNthFromTheEnd {
     public static class ListNode {
         int val;
         ListNode next;
@@ -19,30 +19,24 @@ public class CycleLinkedList2 {
         }
         System.out.println();
     }
-    public static ListNode intersection(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
-        while(fast != null && fast.next != null){ 
-            slow = slow.next;
-            fast = fast.next.next;  
-            if(slow == fast){
-                return slow;
-            }
-        }
-        return null;
-    }
-    public static ListNode detectCycle(ListNode head){
-        if(head == null || head.next == null){
+    public static ListNode removeNthFromTheList(ListNode head, int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        if(head == null){
             return null;
         }
-        ListNode intersect = intersection(head);
-        if(intersect == null) return null;
-        ListNode start = head;
-        while(intersect != start){
-            start = start.next; 
-            intersect = intersect.next;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+        for(int i=1; i<= n+1; ++i){
+            fast = fast.next;
         }
-        return start;
+        while(fast != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummy.next;
     }
     public static void main(String[] args) {
         ListNode a1 = new ListNode(1);
@@ -51,12 +45,14 @@ public class CycleLinkedList2 {
         ListNode a4 = new ListNode(4);
         ListNode a5 = new ListNode(5);
         ListNode a6 = new ListNode(6);
+        ListNode a7 = new ListNode(7);
         a1.next = a2;
         a2.next = a3;
         a3.next = a4;
         a4.next = a5;
         a5.next = a6;
-        ListNode newList = detectCycle(a1);
-        System.out.println(newList);
+        a6.next = a7;
+        ListNode newList = removeNthFromTheList(a1,2);
+        printLinkedList(newList);
     }
 }
