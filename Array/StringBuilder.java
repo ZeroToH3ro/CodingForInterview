@@ -8,7 +8,7 @@
 //             sb1.append(s);
 //         }
 //         for (String s : word2) {
-//             sb2.append(s);
+//             sb2.append(s);   
 //         }
 //         return sb1.toString().equals(sb2.toString());
 //     }

@@ -28,6 +28,9 @@ public class InsertElements2Points {
         int []nums2 = {1,2,3,4};
         int m = 3;
         insertElement(nums1, n, nums2, m);
-        
+        for (int i : nums1) {
+            System.out.print(i+ " ");
+        }
+        System.out.println();
     }
 }
