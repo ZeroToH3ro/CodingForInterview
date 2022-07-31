@@ -56,6 +56,8 @@ public class MyCircularQueue {
     public static void main(String[] args) {
         MyCircularQueue obj = new MyCircularQueue(3);
         obj.enQueue(1);
+        System.out.println(obj.Front());
+        System.out.println(obj.Rear());
         obj.enQueue(2);
         obj.enQueue(3);
         obj.enQueue(4);
@@ -64,5 +66,6 @@ public class MyCircularQueue {
         obj.deQueue();
         obj.enQueue(4);
         obj.Rear();
+        System.out.println();
     }
 }
