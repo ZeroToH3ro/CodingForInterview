@@ -23,7 +23,7 @@ public class ThirdMaxValue {
         }
         return largest[2] == null ? largest[0] : largest[2];
     }
-
+    
     public static void main(String[] args) {
         int[] nums = { 1, 2, 2, 3 };
         System.out.println(thirdMax(nums));

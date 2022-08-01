@@ -25,6 +25,7 @@ public class BinarySearchRecursive {
         return bSearch(a, key, 0, n-1);
     }
     public static void main(String[] args) {
-        
+        int []nums = {2,5,6,12,20,99};
+        System.out.println(bSearch(nums,20));
     }
 }
