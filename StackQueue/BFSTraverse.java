@@ -29,6 +29,8 @@ public class BFSTraverse {
             System.out.print(n + " ");
             for(int i=0; i<adj[n].size(); ++i){
                 a = adj[n].get(i);
+                System.out.println("\na: "+a);
+                //check nodes is visited
                 if(!nodes[a]){
                     nodes[a] = true;
                     que.add(a);
