@@ -13,10 +13,12 @@ public class NumberOfIslands {
     }
     public static int numIslands(char[][] grid) {
         int count = 0;
+        int time = 0;
         for(int i = 0; i < grid.length; i++) {
             for(int j = 0; j < grid[i].length; j++) {
                 if(grid[i][j] == '1'){
                     callBFS(grid, i, j);
+                    System.out.println("time count: "+ (++time));
                     count++;
                 }
             }
