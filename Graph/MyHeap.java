@@ -32,7 +32,7 @@ public class MyHeap {
         while(parentIndex != 0 && arr[parentIndex] > arr[curIndex]){
             //swap 
             swap(arr[parentIndex], arr[curIndex]);
-            curIndex = parentIndex;
+            curIndex = parentIndex; 
             parentIndex = curIndex / 2;
         }
     }

@@ -1,6 +1,7 @@
 package Progress.HashTable;
 
 import java.util.Map;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class DictionaryProgram {
